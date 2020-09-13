@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 65rem;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: .5rem 1.25rem;
+  color: var(--clr-text, white);
+  background: var(--clr-accent, blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  border-radius: 25rem;
+  transition: transform, opacity 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+section {
+  padding: 7rem 0;
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.split > * {
+  flex-basis: 30%;
+  min-width: 15rem;
+}
+
+.primary-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw+1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 15rem 0;
+  background-color: #222;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url(../img/shoe-3.png), radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.featured {
+  background: #eee;
+}
+
+.featured__item {
+  color: #333;
+  text-align: center;
+  display: block;
+  position: relative;
+  transform: scale(0.85);
+  text-decoration: none;
+  transition: transform 250ms ease-in-out;
+}
+
+.featured__item:hover, .featured__item:focus {
+  transform: scale(1);
+}
+
+.featured__item:hover .featured__details, .featured__item:focus .featured__details {
+  opacity: 1;
+}
+
+.featured__item::after {
+  content: '';
+  position: absolute;
+  padding: 40%;
+  border-radius: 50%;
+  background: #2193b0;
+  top: 10%;
+  left: 10%;
+  z-index: -1;
+}
+
+.featured__details {
+  opacity: 0;
+  transition: opacity 250ms linear;
+  margin-top: 2px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.featured__details span.price {
+  display: block;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.product {
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  min-height: 300px;
+}
+
+.product__title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.2);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.product__image {
+  margin-top: -5rem;
+}
+
+.shoe-1 {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-2 {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-3 {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+
+@media only screen and (min-width: 768px) {
+  .product {
+    text-align: left;
+  }
+  .product .product__image {
+    shape-margin: 1rem;
+    margin-top: 0;
+    margin-right: -5em;
+  }
+  .shoe-1 .product__image {
+    float: right;
+    width: 55%;
+    shape-outside: url(../img/shoe-1.png);
+  }
+  .shoe-2 .product__image {
+    float: right;
+    width: 55%;
+    shape-outside: url(../img/shoe-2.png);
+  }
+  .shoe-3 .product__image {
+    float: right;
+    width: 55%;
+    shape-outside: url(../img/shoe-3.png);
+  }
+}
+/*# sourceMappingURL=style.css.map */
